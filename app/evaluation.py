@@ -1,8 +1,8 @@
-def grading_function(response, answer, params):
+def evaluation_function(response, answer, params):
     """
-    Function used to grade a student response.
+    Function used to evaluate a student response.
     ---
-    The handler function passes three arguments to grading_function():
+    The handler function passes three arguments to evaluation_function():
 
     - `response` which are the answers provided by the student.
     - `answer` which are the correct answers to compare against.
@@ -18,8 +18,8 @@ def grading_function(response, answer, params):
 
     The way you wish to structure you code (all in this function, or 
     split into many) is entirely up to you. All that matters are the 
-    return types and that grading_function() is the main function used 
-    to output the grading response.
+    return types and that evaluation_function() is the main function used 
+    to output the evaluation response.
     """
 
     return {

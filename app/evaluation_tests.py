@@ -1,8 +1,8 @@
 import unittest
 
-from .grading import grading_function
+from .evaluation import evaluation_function
 
-class TestGradingFunction(unittest.TestCase):
+class TestEvaluationFunction(unittest.TestCase):
     """
         TestCase Class used to test the algorithm.
         ---
@@ -17,12 +17,12 @@ class TestGradingFunction(unittest.TestCase):
         Read the docs on how to use unittest here:
         https://docs.python.org/3/library/unittest.html
 
-        Use grading_function() to check your algorithm works 
+        Use evaluation_function() to check your algorithm works 
         as it should.
     """
     def test_returns_is_correct_true(self):
         response, answer, params = None, None, dict()
-        result = grading_function(response, answer, params)
+        result = evaluation_function(response, answer, params)
         
         self.assertEqual(result.get("is_correct"), True)
 
