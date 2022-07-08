@@ -48,7 +48,7 @@ jobs:
 
       - name: Test Grading functions
         run: |
-          pytest -v grading_tests.py::TestGradingFunction
+          pytest -v evaluation_tests.py::TestEvaluationFunction
       # - name: Test Request/Response Schema validation
       #   run: |
       #     pytest -v backend/tests/requests.py::TestRequestValidation
@@ -80,11 +80,11 @@ jobs:
           # end of optional handling for multi line json
           echo "::set-output name=configJson::$content"
 
-      - name: set Grading Function Name
+      - name: set Evaluation Function Name
         id: set_function_name
         run: |
-          functionName="${{fromJson(steps.set_config_var.outputs.configJson).GradingFunctionName}}"
-          [[ -z "$functionName" ]] && { echo "Add GradingFunctionName to config.json" ; exit 1; }
+          functionName="${{fromJson(steps.set_config_var.outputs.configJson).EvaluationFunctionName}}"
+          [[ -z "$functionName" ]] && { echo "Add EvaluationFunctionName to config.json" ; exit 1; }
           echo "::set-output name=function_name::$functionName"
 
       - name: Configure AWS credentials
@@ -149,11 +149,11 @@ jobs:
           # end of optional handling for multi line json
           echo "::set-output name=configJson::$content"
 
-      - name: set Grading Function Name
+      - name: set Evaluation Function Name
         id: set_function_name
         run: |
-          functionName="${{fromJson(steps.set_config_var.outputs.configJson).GradingFunctionName}}"
-          [[ -z "$functionName" ]] && { echo "Add GradingFunctionName to config.json" ; exit 1; }
+          functionName="${{fromJson(steps.set_config_var.outputs.configJson).EvaluationFunctionName}}"
+          [[ -z "$functionName" ]] && { echo "Add EvaluationFunctionName to config.json" ; exit 1; }
           echo "::set-output name=function_name::$functionName"
 
       - name: Configure AWS credentials
